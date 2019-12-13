@@ -1,6 +1,9 @@
 #pragma once
 
 #include "ofMain.h"
+#include "ofxGui.h"
+
+#include "PlanetClass.h"
 
 class ofApp : public ofBaseApp{
 
@@ -22,12 +25,22 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 		
 	ofFmodSoundPlayer beat;
+	ofxPanel gui;
+
+	ofParameterGroup planetGroups;
+	PlanetClass solar, mercury, venus, earth, mars, jupiter, saturn, uranus, neptune;
+
+	vector<int> px, py;
 
 	float * fftSmooth;
-	float durationInSeconds;
-	float startTime;
+
+	// 파일 이름 위치
+	string fname;
+
+	// 윈도우 창 중앙 좌표
+	int ww, wh;
 
 	int bands;
 
-
+	bool flag;
 };
